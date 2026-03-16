@@ -1,6 +1,6 @@
 # Superstore Sales Data Analysis
 
-An exploratory data analysis (EDA) project on the [Superstore dataset](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final) from Kaggle, using Python and Jupyter Notebook. The project investigates sales performance, profitability, customer behavior, and shipping patterns across a US retail superstore from 2014–2017.
+An exploratory data analysis (EDA) project on the [Superstore dataset](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final) from Kaggle, using Python and Jupyter Notebook. The project investigates sales performance, profitability, customer behavior, and shipping patterns across a US retail superstore from 2014-2017.
 
 ---
 
@@ -63,12 +63,38 @@ uv run jupyter notebook
 
 ## Key Findings
 
-- **Overall:** Total sales reached ~$2.3M with ~$286K in profit over 4 years.
-- **Furniture** consistently generates negative profit despite decent sales volume — heavily linked to over-discounting.
-- **Technology** is the most profitable category with the highest profit spikes.
-- **Discounts above 30%** strongly correlate with profit loss across all categories.
-- **Ship mode** has minimal impact on profitability — all four modes cluster within a 2% margin range.
-- **Discount alone is a weak predictor of profit** (R² = 0.06 overall), though Furniture shows the strongest relationship (R² = 0.23).
+### Does discount percentage correlate with profit loss?
+Discounts above 30% strongly correlate with profit loss. Transactions with no discount yield the highest profits, while those with 60-80% discounts are almost entirely unprofitable.
+
+![Discount vs Profit](/screenshots/Discount_vs_Profit.png)
+
+---
+
+### Which customer segment generates the most revenue and profit?
+The Consumer segment leads in both sales and profit, followed by Corporate and Home Office. However, all three segments show a large gap between sales and profit volume.
+
+![Sales and Profit by Customer Segment](/screenshots/Sales_Profit_Customer_Segment.png)
+
+---
+
+### How do sales and profit trend over time per category?
+All three categories show overall sales growth from 2014-2017. Technology generates the highest profit spikes, Office Supplies is consistently profitable, and Furniture repeatedly dips into negative profit despite comparable sales.
+
+![Sales and Profit Trend by Category](/screenshots/Trend_By_Category.png)
+
+---
+
+### Does ship mode affect profitability?
+Ship mode has minimal impact on profitability — all four modes cluster within a 2% profit margin range (12-14%), with First Class slightly ahead.
+
+![Profit Margin % by Ship Mode](/screenshots/Profit_Margin_Ship_Mode.png)
+
+---
+
+### Can we predict profit based on discount?
+Discount alone is a weak predictor of profit (R² = 0.06 overall). The model struggles to capture the wide variance in actual profits, as seen by the scattered points deviating far from the ideal prediction line.
+
+![Actual vs Predicted Profit](/screenshots/Profit_Prediction.png)
 
 ---
 
@@ -77,5 +103,5 @@ uv run jupyter notebook
 - **Source:** [Superstore Dataset - Kaggle](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)
 - **File:** `Sample - Superstore.csv`
 - **Records:** 9,994 rows, 21 columns
-- **Period:** 2014–2017
+- **Period:** 2014-2017
 - **No null values** found in the dataset.
